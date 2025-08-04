@@ -13,7 +13,7 @@ def check_proximity():
     # Extract coordinates and radius from the data
     warehouse_coords = tuple(data['warehouse'])  # [lat, lng]
     delivery_coords = tuple(data['delivery'])   # [lat, lng]
-    radius = data.get('radius', 250)         # in meters
+    radius = float(data.get('radius', 250))         # in meters
 
     # Calculate the distance in meters
     distance = geodesic(warehouse_coords, delivery_coords).meters
